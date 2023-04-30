@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) Remote Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/native_docker_debugging/bin/hello_world",
+            "args": [],
+            "stopAtEntry": true,
+            "cwd": "/native_docker_debugging",
+            "externalConsole": true,
+            "sourceFileMap": { 
+                "/native_docker_debugging": "/Users/dhrsharm/Documents/cpp_open_source/native_docker_debugging",
+             },                       
+            "pipeTransport": {
+                "debuggerPath": "/usr/bin/gdb",
+                "pipeProgram": "/usr/local/bin/sshpass",
+                "pipeArgs": [
+                    "-p",
+                    "root",
+                    "ssh",
+                    "-p",
+                    "2222",
+                    "root@localhost",
+                ],
+                "pipeCwd": ""
+            },      
+            "MIMode": "gdb"         
+        }
+    ]
+}
